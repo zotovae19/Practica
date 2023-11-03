@@ -1,32 +1,42 @@
+
 *{
  box-sizing: border-box;
-
+ padding: auto;
+ 
 }
 
 html, body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-mi-header{
+
+.mi-header {
     display: flex;
-    flex-direction: column;
+    position: relative;
+    background-image: url('./img/header.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 10px; 
+}
+
+.logo {
+    position: absolute;
+    top: 20px; 
+    left: 20px;
+    width: 100px;
+    height: 100px; 
+    z-index: 1; 
+    display: flex;
+    cursor: pointer;
 }
 
 .sup{
     display: flex;
     justify-content: space-between;
 }
-mi-header .sup .logo{
-    width: 200px;
-    height: 200px;
-    background-color: aliceblue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
 
-mi-header .sup .mi-nav{
+
+.mi-header .sup .mi-nav{
     padding: 16px;
 }
 
@@ -34,8 +44,14 @@ mi-header .sup .mi-nav{
     width: 100%;
     display: flex;
     align-items: center;
-    margin-top: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    z-index: 1; 
 }
+
 
 .mi-nav ul{
     list-style: none;
@@ -46,17 +62,39 @@ mi-header .sup .mi-nav{
 }
 
 .mi-nav ul li{
-    display: inline-block;
-    margin-right: 1rem;
+    display: inline-flex; 
+    margin-right: 3rem;
+    margin-bottom: 1rem;
     padding-right: 1rem;
-    border-right: 1px solid #999;
+    border-right: none;
+    text-decoration: none;
+    align-items: center;
+}
+
+.mi-nav ul li img {
+    margin-right: 10px; 
 }
 
 .mi-nav ul li:last-child{
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+    
 }
+
+.mi-nav ul:last-child {
+    display: flex;
+    align-items: center;
+}
+
+.mi-nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+
+
 
 .banner-principal{
     display: flex;
@@ -64,9 +102,14 @@ mi-header .sup .mi-nav{
     justify-content: center;
     text-align: center;
     margin: 0 auto;
-    background-color: #9999994c;
+    background-color: #99999915;
     width: 95%;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1;
 }
+
 .banner-principal p{
     font-size: 20px;
     font-weight: 300;
@@ -80,6 +123,7 @@ mi-header .sup .mi-nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #9999998a;
     margin-top: 48px;
 }
 
@@ -91,6 +135,7 @@ mi-header .sup .mi-nav{
 }
 
 .categoria a{
+    
     background-color: rgb(229, 147, 147);
     width: 100%;
     font-size: 20px;
@@ -101,17 +146,36 @@ mi-header .sup .mi-nav{
 
 .contenedor-columnas{
     margin-top: 0;
-    column-count: 2; /* Divide el contenido en dos columnas */
+    column-count: 2; 
     column-gap: 25px;
-    font-size: 16px; /* Tamaño de fuente */
+    font-size: 16px; 
     line-height: 1.6;
     text-align: justify;
 }
 
-/* es para adaptarlo al movil*/
+.mi-footer {
+    background-color: #CCCCCC;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; /* Se agrega posición relativa para establecer la referencia */
+    height: 3em; /* Ajusta la altura del footer según sea necesario */
+  }
+  
+  .mi-footer a {
+    text-decoration: none;
+    color: black;
+    position: absolute; /* Se agrega posición absoluta */
+    justify-content: center; /* Centra el enlace */
+    z-index: 1;
+    height: 1em;
+  }
+    
+
+ 
+
   @media only screen and (max-width: 600px) {
-    nav,
-    .sup ul{
+    .mi-nav,
+    .sup .ul{
         display: none;
     }
     
@@ -125,4 +189,3 @@ mi-header .sup .mi-nav{
 
   }
   
- 
